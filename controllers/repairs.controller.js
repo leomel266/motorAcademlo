@@ -48,7 +48,7 @@ exports.updateRepair = async (req, res) => {
     const { id } = req.params;
     const { name, email } = req.body;
 
-    const repair = await User.findOne({
+    const repair = await Repair.findOne({
       where: {
         status: 'pending',
         id,
