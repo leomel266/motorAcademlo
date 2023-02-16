@@ -8,7 +8,7 @@ const User = db.define('user', {
     autoIncrement: true,
     allowNull: false,
   },
-  name: {
+  username: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -21,16 +21,14 @@ const User = db.define('user', {
     allowNull: false,
   },
   role: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM('client', 'employee'),
     allowNull: false,
     defaultValue: 'client',
-    enum: ['client', 'employee'],
   },
   status: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM('available', 'disabled'),
     allowNull: false,
     defaultValue: 'available',
-    enum: ['available', 'disabled'],
   },
 });
 
